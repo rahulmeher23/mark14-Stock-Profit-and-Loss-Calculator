@@ -21,7 +21,7 @@ function calculatePL(initial, qty, current) {
 
     if(initial > current) {
         var loss = (initial - current) * qty;
-        var lossPercentage = (loss / initial) * 100;
+        var lossPercentage = (loss / (initial*qty) * 100;
         output.innerHTML = ` <span style = "color: #fee2e2">📉 Your loss is ${loss} and the percent is ${lossPercentage.toFixed(2)}%.</span>`;
         document.querySelector("#body").style.backgroundColor = "#b91c1c";
 
