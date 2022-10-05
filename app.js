@@ -22,12 +22,15 @@ function calculatePL(initial, qty, current) {
     if(initial > current) {
         var loss = (initial - current) * qty;
         var lossPercentage = (loss / initial) * 100;
-        output.innerHTML = ` <span style = "color: red">📉 Your loss is ${loss} and the percent is ${lossPercentage.toFixed(2)}%.</span>`;
+        output.innerHTML = ` <span style = "color: #fee2e2">📉 Your loss is ${loss} and the percent is ${lossPercentage.toFixed(2)}%.</span>`;
+        document.querySelector("#body").style.backgroundColor = "#b91c1c";
 
     } else if (current > initial) {
         var profit = (current - initial) * qty;
         var profitPercentage = (profit/initial) * 100;
-        output.innerText = `📈 Your profit is ${profit} and the percent is ${profitPercentage.toFixed(2)}%.`;
+        output.innerHTML = `<span style="color: #ecfccb">📈 Your profit is ${profit} and the percent is ${profitPercentage.toFixed(2)}%.`;
+        document.querySelector("#body").style.backgroundColor = "#4d7c0f";
+        
     } else {
         output.innerHTML = `<span style="color: whitesmoke">No Pain No Gain, No Gain No Pain.`;
     }
