@@ -27,7 +27,7 @@ function calculatePL(initial, qty, current) {
 
     } else if (current > initial) {
         var profit = (current - initial) * qty;
-        var profitPercentage = (profit/initial) * 100;
+        var profitPercentage = (profit/(initial*qty)) * 100;
         output.innerHTML = `<span style="color: #ecfccb">📈 Your profit is ${profit} and the percent is ${profitPercentage.toFixed(2)}%.`;
         document.querySelector("#body").style.backgroundColor = "#4d7c0f";
         
