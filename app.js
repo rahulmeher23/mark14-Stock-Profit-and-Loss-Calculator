@@ -22,17 +22,18 @@ function calculatePL(initial, qty, current) {
     if(initial > current) {
         var loss = (initial - current) * qty;
         var lossPercentage = (loss / (initial*qty)) * 100;
-        output.innerHTML = ` <span style = "color: #fee2e2">📉 Your loss is ${loss} and the percent is ${lossPercentage.toFixed(2)}%.</span>`;
+        output.innerHTML = ` <span style = "color: #fee2e2">📉 Your loss is ₹${loss} and the percent is ${lossPercentage.toFixed(2)}%. <br> <h1 style="margin: 0.5rem auto">😔</h1></span>`;
         document.querySelector("#body").style.backgroundColor = "#b91c1c";
 
     } else if (current > initial) {
         var profit = (current - initial) * qty;
         var profitPercentage = (profit/(initial*qty)) * 100;
-        output.innerHTML = `<span style="color: #ecfccb">📈 Your profit is ${profit} and the percent is ${profitPercentage.toFixed(2)}%.`;
+        output.innerHTML = `<span style="color: #ecfccb">📈 Your profit is ₹${profit} and the percent is ${profitPercentage.toFixed(2)}%. <br> <h1 style="margin: 0.5rem auto">🎉🎊</h1></span>`;
         document.querySelector("#body").style.backgroundColor = "#4d7c0f";
         
     } else {
-        output.innerHTML = `<span style="color: whitesmoke">No Pain No Gain, No Gain No Pain.`;
+        output.innerHTML = `<span style="color: whitesmoke">No Pain No Gain, No Gain No Pain.<br> <h1 style="margin: 0.5rem auto">🚫😢🚫💪</h1>`;
+        document.querySelector("#body").style.backgroundColor = "#1F2937";
     }
 }
 
