@@ -12,8 +12,14 @@ function clickHandler() {
     var initial = Number(initialPrice.value);
     var qty = Number(totalQty.value);
     var current = Number(currentPrice.value);
+    console.log(initial, qty, current);
 
-    calculatePL(initial, qty, current);
+    if (initial < 0 || qty < 0 || current < 0) {
+        output.innerHTML =  `<span style="color:#dc2626">Please input a valid value.</span>`;
+        document.querySelector("#body").style.backgroundColor = "#1F2937";
+    } else {
+        calculatePL(initial, qty, current);
+    }
 }
 
 
