@@ -14,7 +14,7 @@ function clickHandler() {
     var current = Number(currentPrice.value);
     console.log(initial, qty, current);
 
-    if (initial < 0 || qty < 0 || current < 0) {
+    if (initial <= 0 || qty <= 0 || current <= 0 || initial == "" || qty == "" || current == ""  ) {
         output.innerHTML =  `<span style="color:#dc2626">Please input a valid value.</span>`;
         document.querySelector("#body").style.backgroundColor = "#1F2937";
     } else {
